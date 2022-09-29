@@ -1,8 +1,10 @@
 ﻿@page "/maze"
 @using System.Globalization
+@using MudBlazor
 
+<MudSwipeArea OnSwipe="@((d) => {TryMove(d); StateHasChanged();})" Style="width: 100%; height: 300px">
 <div @onkeydown="@OnKeyDown" tabindex="0">
-	<h3>Help me, find my way to her</h3>
+	<h3>Help me, find my way to her</h3>`
 
 	<div class="row">
 		@((MarkupString)MazeRender)
@@ -29,6 +31,7 @@
 	</div>
 </div>
 
+</MudSwipeArea>
 <style>
 	.player {
 		x: @(PlayerX * 3 + 0.5);
@@ -45,6 +48,7 @@
 
 @code
 {
+	SwipeDirection _swipeDirection;
 	bool Win = false;
 	private NumberStyles style = 
 				NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign;
@@ -73,6 +77,7 @@
 		Down = 2,
 		Left = 3,
 		Right = 4,
+		None = 5
 	}
 
 	[Flags]
@@ -98,6 +103,15 @@
 			default: return;
 		}
 		StateHasChanged();
+	}
+
+	void TryMove(SwipeDirection direction)
+	{
+		if (direction is SwipeDirection.LeftToRight) TryMove(Direction.Right);
+		else if (direction is SwipeDirection.RightToLeft) TryMove(Direction.Left);
+		else if (direction is SwipeDirection.BottomToTop) TryMove(Direction.Up);
+		else if (direction is SwipeDirection.TopToBottom) TryMove(Direction.Down);
+		else TryMove(Direction.None);
 	}
 
 	void TryMove(Direction direction)
