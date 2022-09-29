@@ -2,10 +2,11 @@
 @using System.Globalization
 @using MudBlazor
 
-<MudSwipeArea OnSwipe="@((d) => {TryMove(d); StateHasChanged();})" Style="width: 100%; height: 300px">
+
 <div @onkeydown="@OnKeyDown" tabindex="0">
 	<h3>Help me, find my way to her</h3>`
 
+	<MudSwipeArea OnSwipe="@((d) => {TryMove(d); StateHasChanged();})" Style="width: 100%; height: 300px">
 	<div class="row">
 		@((MarkupString)MazeRender)
 	</div>
@@ -17,6 +18,7 @@
 			<button class="btn btn-primary" @onclick="() => { TryMove(Direction.Down); StateHasChanged(); }">↓</button>
 		</div>
 	</div>
+	</MudSwipeArea>
 	<div class="row controls">
 		<input type="number" @bind="difficultyLevel"/>
 		<button class="btn btn-primary" @onclick="() => { Win = false; PlayerX = 0; PlayerY = 0; _currentMaze = Generate(difficultyLevel, difficultyLevel); StateHasChanged(); }">New Maze</button>
@@ -31,7 +33,6 @@
 	</div>
 </div>
 
-</MudSwipeArea>
 <style>
 	.player {
 		x: @(PlayerX * 3 + 0.5);
