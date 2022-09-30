@@ -1,9 +1,8 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <MudThemeProvider />
-    <MudDialogProvider />
-    <MudSnackbarProvider />
+<MudThemeProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
 
     <MudLayout>
          <MudAppBar>
@@ -33,7 +32,6 @@
             @Body
         </article>
     </main>*@
-</div>
 
 @code {
     bool _drawerOpen = true;
