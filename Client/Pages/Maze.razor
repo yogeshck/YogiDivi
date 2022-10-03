@@ -10,9 +10,17 @@
 			<MudItem xs="12" sm="12">
 				<MudAlert Severity="Severity.Info" Variant="Variant.Filled" Dense="true" Elevation="24" Class="mt-16">
 					<strong>Rules:</strong>
-					You are the blue square, and always start in the top left. Nagivate the maze to make it to the end in the bottom right.
+					You are Yogi, and always start in the top left. Nagivate the maze to make it to the end in the bottom right to Divi.
 					Keyboard inputs (←, →, ↑, ↓) are supported if you click on the board.
 				</MudAlert>
+				@if (Win)
+				{
+					<MudAlert Severity="Severity.Success" Variant="Variant.Filled" Dense="true" Elevation="24" Class="mt-16" Style="">
+						<div class="row winmessage">
+							Thank You!, We are happy. (click "Start over")
+						</div>
+					</MudAlert>
+				}
 			</MudItem>
 			<MudItem xs="6">
 				<div class="d-flex justify-center">
@@ -20,34 +28,29 @@
 				</div>
 			</MudItem>
 			<MudItem xs="6">
-				<MudGrid Justify="Justify.Center">
-					<MudItem xs="12">
+				<MudGrid Justify="Justify.Center" Spacing="5">
+					<MudItem xs="6">
 						<MudFab Color="Color.Primary" StartIcon="@Icons.Filled.ArrowCircleUp" OnClick="() => { TryMove(Direction.Up); StateHasChanged();}" />
 					</MudItem>
-					<MudItem xs="3">
+					<MudItem xs="6">
 						<MudFab Color="Color.Primary" StartIcon="@Icons.Filled.ArrowCircleLeft" OnClick="() => { TryMove(Direction.Left); StateHasChanged();}"/>
 					</MudItem>
-					<MudItem xs="3">
+					<MudItem xs="6">
 						<MudFab Color="Color.Primary" StartIcon="@Icons.Filled.ArrowCircleDown" OnClick="() => { TryMove(Direction.Down); StateHasChanged();}"/>
 					</MudItem>
-					<MudItem xs="3">
+					<MudItem xs="6">
 						<MudFab Color="Color.Primary" StartIcon="@Icons.Filled.ArrowCircleRight" OnClick="() => { TryMove(Direction.Right); StateHasChanged();}" />
 					</MudItem>
-					<MudItem xs="3"></MudItem>
 				</MudGrid>
 			</MudItem>
 			<MudItem xs="6">
 				<MudNumericField @bind-Value="difficultyLevel" Label="Difficulty" Variant="Variant.Text" Min="0" Max="10" />
 			</MudItem>
 			<MudItem xs="6">
-				<MudFab StartIcon="@Icons.Filled.Autorenew" Label="New Maze" OnClick="() => { Win = false; PlayerX = 0; PlayerY = 0; _currentMaze = Generate(difficultyLevel, difficultyLevel); StateHasChanged(); }" />
+				<MudFab StartIcon="@Icons.Filled.Autorenew" Label="Start Over" OnClick="() => { Win = false; PlayerX = 0; PlayerY = 0; _currentMaze = Generate(difficultyLevel, difficultyLevel); StateHasChanged(); }" />
 			</MudItem>
 		</MudGrid>
 	</MudSwipeArea>
-
-	<div class="row winmessage" style="display:@(Win ? "block" : "none")">
-		You Win! Press "New Maze" to play again.
-	</div>
 </div>
 
 <style>
