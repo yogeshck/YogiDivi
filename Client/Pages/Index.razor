@@ -2,18 +2,34 @@
 
 <PageTitle>Wedding</PageTitle>
 
-<h1>Welcome to our wedding</h1
+<MudCarousel Class="mud-width-full" Style="height:200px;" ShowArrows="true" ShowBullets="true" EnableSwipeGesture="true" AutoCycle="true" TData="object">
+    <MudCarouselItem Transition="Transition.Fade" Color="@Color.Primary">
+        <div class="d-flex" style="height:100%">
+            <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
+        </div>
+    </MudCarouselItem>
+    <MudCarouselItem Transition="Transition.Fade" Color="@Color.Secondary">
+        <div class="d-flex" style="height:100%">
+            <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Size="@Size.Large" />
+        </div>
+    </MudCarouselItem>
+    <MudCarouselItem Transition="Transition.Fade">
+        <div class="d-flex" style="height:100%">
+            <MudIcon Class="mx-auto my-auto" Icon="@Icons.Custom.Brands.MudBlazor" Color="@Color.Primary" Size="@Size.Large" />
+        </div>
+    </MudCarouselItem>
+</MudCarousel>
 
  <MudGrid Spacing="10" Justify="Justify.Center">
-    <MudItem>
-        <MudPaper Height="140px" Width="140px">
-            Save the Date
-        </MudPaper>
-    </MudItem>
     <MudItem>
         <MudPaper Height="140px" Width="140px" Elevation="10">
             Reception Nov 10
         </MudPaper>
+    </MudItem>
+    <MudItem>
+        <div class="d-flex justify-center">
+            <MudImage ObjectFit="ObjectFit.Contain" Height="200" Width="400" Src="images/savedate.png" Alt="Save the date" Class="rounded-lg" />
+        </div>
     </MudItem>
     <MudItem>
         <MudPaper Height="140px" Width="140px" Elevation="10">
@@ -22,8 +38,25 @@
     </MudItem>
 </MudGrid>
 <MudTimeline>
-    <MudTimelineItem>
-        <MudText>Getting to Know</MudText>
+    <MudTimelineItem Elevation="25"> 
+        <ItemOpposite>  
+            <MudText Color="Color.Info" Typo="Typo.h5">1993</MudText>
+        </ItemOpposite>
+        <ItemContent>
+            <MudCard>
+                <MudCardContent>
+                    <MudText Typo="Typo.h1">Yogi</MudText>
+                    <MudText Typo="Typo.body2">Born with the killer looks</MudText>
+                    <MudText Typo="Typo.body2">Expecting a liftime of happiness!! YAY!!</MudText>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default" />
+                </MudCardActions>
+            </MudCard>
+        </ItemContent>
+        <ItemDot>
+            <MudAvatar Size="Size.Large" Image="images/yogibaby.jpg" />
+        </ItemDot>
     </MudTimelineItem>
     <MudTimelineItem>
         <MudText Align="Align.End">Magical first meet</MudText>
