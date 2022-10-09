@@ -5,10 +5,18 @@
 <MudSnackbarProvider />
 
     <MudLayout>
-         <MudAppBar>
+    <MudAppBar Fixed="false" Dense="true">
              <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        Yogi Weds Divi :)
-        <MudSwitch @bind-Checked="@_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode"/>
+                 <MudText>
+                     Divi
+                 </MudText>
+                 <MudImage src="images/heart.png" ObjectFit="Object.ScaleDown" Height="50px" />
+                 <MudText>
+                     Yogi
+                 </MudText>
+        <MudSpacer />
+        <MudToggleIconButton Edge="Edge.End" @bind-Toggled="@_isDarkMode" Icon="@Icons.Filled.LightMode" Color="@Color.Error" Title="Switch to Light"
+                             ToggledIcon="@Icons.Filled.DarkMode" ToggledColor="@Color.Success" ToggledTitle="Switch to Dark" />
     </MudAppBar>
 <MudDrawer @bind-Open="@_drawerOpen">
         <MyNavMenu/>
@@ -19,14 +27,11 @@
         @Body
     </MudContainer>
     </MudMainContent>
-    <MudText Typo="Typo.subtitle1">
-        <a href='https://pngtree.com/so/save'>save png from pngtree.com/</a>
-    </MudText>
 </MudLayout>
 
 @code {
     private MudTheme _theme = new();
-    private bool _isDarkMode = true;
+    private bool _isDarkMode;
 
     bool _drawerOpen = true;
 
