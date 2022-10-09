@@ -5,6 +5,10 @@ html, body {
     overscroll-behavior: contain;
 }
 
+.page-background-class {
+    background-image: url(../images/back.png)
+}
+
 h1:focus {
     outline: none;
 }
