@@ -1,52 +1,79 @@
 ﻿@page "/"
 
 <PageTitle>Wedding</PageTitle>
-<br>
-<br>
-<br>
+
 <MudContainer Class="d-flex flex-column flex-grow-1 gap-4" Elevation="25">
-    <MudStack Spacing="5" Row="true" Justify="Justify.Center">
-        <MudPaper>
-            <MudStack Row="true" Justify="Justify.Center" AlignItems="AlignItems.Start">
-                <MudImage ObjectFit="ObjectFit.Contain" Height="200" Width="400" Src="images/november.png" Alt="Save the date" Class="rounded-lg" />
-                <MudText>
-                    Reception at 6:30 pm November 10
-                    Marriage at 7:30 - 9 am November 11
-                </MudText>
-                @*<MudImage ObjectFit="ObjectFit.Contain" Height="200" Width="400" Src="images/savedate.png" Alt="Save the date" Class="rounded-lg" />*@
-</MudStack>
-        </MudPaper>
-            <MudCard>
+
+        <MudStack Spacing="5" Row="true" Justify="Justify.Center">
+            <MudPaper Class="flex-grow-1 py-8">
+                <MudStack Row="true" Justify="Justify.Center" AlignItems="AlignItems.Start">
+                    <MudImage ObjectFit="ObjectFit.Contain" Height="200" Width="400" Src="images/november.png" Alt="Save the date" Class="rounded-lg" />
+                <MudDivider/>
+                <div class="page-background-class">
+                    <MudStack Class="page-background-class">
+                        <MudText>
+                            Reception at 6:30 pm November 10
+                        </MudText>
+                        <MudText>
+                            Marriage at 7:30 - 9 am November 11
+                        </MudText>
+                    </MudStack>
+                    @*<MudImage ObjectFit="ObjectFit.Contain" Height="200" Width="400" Src="images/savedate.png" Alt="Save the date" Class="rounded-lg" />*@
+                    </div>
+            </MudStack>
+              
+            </MudPaper>
+            <MudCard Class="flex-grow-1 py-8">
                 <MudCardHeader>
                     <MudText Typo="Typo.h4">
                         Meet us at!
                     </MudText>
                 </MudCardHeader>
                 <MudCardContent>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.538259064455!2d80.1987228!3d13.0747967!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x52bb41a013683ba2!2sSree%20Varaaham%20Hall!5e0!3m2!1sen!2sin!4v1665216781960!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.538259064455!2d80.1987228!3d13.0747967!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x52bb41a013683ba2!2sSree%20Varaaham%20Hall!5e0!3m2!1sen!2sin!4v1665216781960!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </MudCardContent>
             </MudCard>
-    </MudStack>
+        </MudStack>
     <MudDivider/>
     <MudCarousel Class="mud-width-full" Style="height:500px;" ShowArrows="true" ShowBullets="true" EnableSwipeGesture="true" AutoCycle="true" TData="object">
         <MudCarouselItem Transition="Transition.Fade" Color="@Color.Transparent">
-            <div class="d-flex" style="width:100%">
+            <div class="d-flex" style="height:100%">
                 <MudImage ObjectFit="ObjectFit.Cover" Src="images/Carousel1.jpg" Class="rounded-lg" />
             </div>
         </MudCarouselItem>
         <MudCarouselItem Transition="Transition.Fade" Color="@Color.Transparent">
-            <div class="d-flex" style="width:100%">
+            <div class="d-flex" style="height:100%">
                 <MudImage ObjectFit="ObjectFit.Cover" Src="images/Carousel2.jpg" Class="rounded-lg" />
             </div>
         </MudCarouselItem>
         <MudCarouselItem Transition="Transition.Fade" Color="@Color.Transparent">
-            <div class="d-flex" style="width:100%">
+            <div class="d-flex" style="height:100%">
                 <MudImage ObjectFit="ObjectFit.Cover" Src="images/Carousel3.jpg" Class="rounded-lg" />
             </div>
         </MudCarouselItem>
     </MudCarousel>
     <MudDivider />
-    <MudText Align="Align.Justify" Typo="Typo.h3">Our Story</MudText>
+    <MudStack Justify="Justify.Center" Row="true">
+        <MudText>
+            Countdown to our special day!
+        </MudText>
+        <MudChip Variant="Variant.Text" Color="Color.Primary">
+            @Days
+        </MudChip>
+        <MudChip Variant="Variant.Text" Color="Color.Primary">
+            @Hours
+        </MudChip>
+        <MudChip Variant="Variant.Text" Color="Color.Primary">
+            @Min
+        </MudChip>
+        <MudChip Variant="Variant.Text" Color="Color.Primary">
+            @Sec
+        </MudChip>
+    </MudStack>
+    <MudDivider />
+    <MudStack Justify="Justify.Center">
+        <MudText Typo="Typo.h3">Our Story</MudText>
+    </MudStack>
     <MudTimeline>
         <MudTimelineItem>
             <ItemOpposite>
@@ -57,9 +84,6 @@
                     <MudCardContent>
                         <MudText Typo="Typo.body2">Born with the killer looks</MudText>
                     </MudCardContent>
-                    <MudCardActions>
-                        <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default" />
-                    </MudCardActions>
                 </MudCard>
             </ItemContent>
             <ItemDot>
@@ -92,12 +116,10 @@
             </ItemOpposite>
             <ItemContent>
                 <MudCard>
+                    <MudCardMedia Image=""/>
                     <MudCardContent>
                         <MudText Typo="Typo.h4">Yogi singing "Raja... Rajathi Rajan intha Raja....."</MudText>
                     </MudCardContent>
-                    <MudCardActions>
-                        <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default" />
-                    </MudCardActions>
                 </MudCard>
             </ItemContent>
         </MudTimelineItem>
@@ -135,3 +157,56 @@
         </MudTimelineItem>
     </MudTimeline>
 </MudContainer>
+
+@code{
+    DateTime weddingdate = DateTime.Parse("11/11/2022 7:30:00 AM");
+
+    int Days;
+    int Hours;
+    int Min;
+    int Sec;
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        var timer = new System.Threading.Timer((_) =>
+        {
+
+            InvokeAsync(async () =>
+            {
+                Days = GetDays();
+                Hours = GetHours();
+                Min = GetMin();
+                Sec = GetSec();
+                StateHasChanged();
+            });
+        }, null, 0, 1000);
+    }
+
+    private int GetDays()
+    {
+        if (weddingdate < DateTime.Now)
+            return 0;
+        return (weddingdate - DateTime.Now).Days;
+    }
+
+    private int GetHours()
+    {
+        if (weddingdate < DateTime.Now)
+            return 0;
+        return (weddingdate - DateTime.Now).Hours;
+    }
+
+    private int GetMin()
+    {
+        if (weddingdate < DateTime.Now)
+            return 0;
+        return (weddingdate - DateTime.Now).Minutes;
+    }
+
+    private int GetSec()
+    {
+        if (weddingdate < DateTime.Now)
+            return 0;
+        return (weddingdate - DateTime.Now).Seconds;
+    }
+}
