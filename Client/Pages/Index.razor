@@ -3,88 +3,34 @@
 <PageTitle>Wedding</PageTitle>
 
 <MudContainer Class="d-flex flex-column flex-grow-1 gap-4" Elevation="25">
-
-        <MudStack Spacing="5" Row="true" Justify="Justify.Center">
-            <MudPaper Class="flex-grow-1 py-8">
-                <MudStack Row="true" Justify="Justify.Center" AlignItems="AlignItems.Start">
-                    <MudImage ObjectFit="ObjectFit.Contain" Height="200" Width="400" Src="images/november.png" Alt="Save the date" Class="rounded-lg" />
-                <MudDivider/>
-                <div class="page-background-class">
-                    <MudStack Class="page-background-class">
-                        <MudText>
-                            Reception at 6:30 pm November 10
-                        </MudText>
-                        <MudText>
-                            Marriage at 7:30 - 9 am November 11
-                        </MudText>
-                    </MudStack>
-                    @*<MudImage ObjectFit="ObjectFit.Contain" Height="200" Width="400" Src="images/savedate.png" Alt="Save the date" Class="rounded-lg" />*@
-                    </div>
-            </MudStack>
-              
-            </MudPaper>
-            <MudCard Class="flex-grow-1 py-8">
-                <MudCardHeader>
-                    <MudText Typo="Typo.h4">
-                        Meet us at!
-                    </MudText>
-                </MudCardHeader>
-                <MudCardContent>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.538259064455!2d80.1987228!3d13.0747967!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x52bb41a013683ba2!2sSree%20Varaaham%20Hall!5e0!3m2!1sen!2sin!4v1665216781960!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </MudCardContent>
-            </MudCard>
-        </MudStack>
-    <MudDivider/>
     <MudCarousel Class="mud-width-full" Style="height:500px;" ShowArrows="true" ShowBullets="true" EnableSwipeGesture="true" AutoCycle="true" TData="object">
         <MudCarouselItem Transition="Transition.Fade" Color="@Color.Transparent">
             <div class="d-flex" style="height:100%">
-                <MudImage ObjectFit="ObjectFit.Cover" Src="images/Carousel1.jpg" Class="rounded-lg" />
+                <MudImage ObjectFit="ObjectFit.Contain" Src="images/Carousel1.jpg" Class="rounded-lg" oncontextmenu="return false;" />
             </div>
         </MudCarouselItem>
         <MudCarouselItem Transition="Transition.Fade" Color="@Color.Transparent">
             <div class="d-flex" style="height:100%">
-                <MudImage ObjectFit="ObjectFit.Cover" Src="images/Carousel2.jpg" Class="rounded-lg" />
+                <MudImage ObjectFit="ObjectFit.Contain" Src="images/Carousel2.jpg" Class="rounded-lg" oncontextmenu="return false;"/>
             </div>
         </MudCarouselItem>
         <MudCarouselItem Transition="Transition.Fade" Color="@Color.Transparent">
             <div class="d-flex" style="height:100%">
-                <MudImage ObjectFit="ObjectFit.Cover" Src="images/Carousel3.jpg" Class="rounded-lg" />
+                <MudImage ObjectFit="ObjectFit.Contain" Src="images/Carousel3.jpg" Class="rounded-lg" oncontextmenu="return false;" />
             </div>
         </MudCarouselItem>
     </MudCarousel>
     <MudDivider />
-    <MudStack Justify="Justify.Center" Row="true">
-        <MudText>
-            Countdown to our special day!
-        </MudText>
-        <MudChip Variant="Variant.Text" Color="Color.Primary">
-            @Days
-        </MudChip>
-        <MudChip Variant="Variant.Text" Color="Color.Primary">
-            @Hours
-        </MudChip>
-        <MudChip Variant="Variant.Text" Color="Color.Primary">
-            @Min
-        </MudChip>
-        <MudChip Variant="Variant.Text" Color="Color.Primary">
-            @Sec
-        </MudChip>
-    </MudStack>
-    <MudDivider />
-    <MudStack Justify="Justify.Center">
+     <MudStack Justify="Justify.Center">
         <MudText Typo="Typo.h3">Our Story</MudText>
-    </MudStack>
     <MudTimeline>
         <MudTimelineItem>
             <ItemOpposite>
                 <MudText Color="Color.Info" Typo="Typo.h5">1993</MudText>
             </ItemOpposite>
             <ItemContent>
-                <MudCard>
-                    <MudCardContent>
-                        <MudText Typo="Typo.body2">Born with the killer looks</MudText>
-                    </MudCardContent>
-                </MudCard>
+                <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">Birthday</MudText>
+                <MudText>Born with the killer looks</MudText>
             </ItemContent>
             <ItemDot>
                 <MudAvatar Size="Size.Large" Image="images/yogibaby.jpg" />
@@ -95,67 +41,165 @@
                 <MudText Color="Color.Info" Typo="Typo.h5">1997</MudText>
             </ItemOpposite>
             <ItemContent>
-                <MudCard>
-                    <MudCardContent>
-                        <MudText Typo="Typo.body2">Born with the cute looks</MudText>
-                    </MudCardContent>
-                </MudCard>
+                    <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">Birthday</MudText>
+                    <MudText>Born with the cute looks</MudText>
+
             </ItemContent>
             <ItemDot>
                 <MudAvatar Size="Size.Large" Image="images/divibaby.jpg" />
             </ItemDot>
         </MudTimelineItem>
-        <MudTimelineItem Color="Color.Primary">
+        <MudTimelineItem>
             <ItemOpposite>
-                <MudCard>
-                    <MudCardMedia Image="images/divipray.jpg" Height="200" />
-                    <MudCardContent>
-                        <MudText Typo="Typo.h4">Divi's dream of marrying a singer</MudText>
-                    </MudCardContent>
-                </MudCard>
+                <MudPaper>
+                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center">
+                        <MudImage Src="images/divithink.png" Height="100" ObjectFit="ObjectFit.Contain" oncontextmenu="return false;"/>
+                        <MudText>Thinking she gonna end up marrying a singer</MudText>
+                    </MudStack>
+                </MudPaper>
             </ItemOpposite>
             <ItemContent>
-                <MudCard>
-                    <MudCardMedia Image=""/>
-                    <MudCardContent>
-                        <MudText Typo="Typo.h4">Yogi singing "Raja... Rajathi Rajan intha Raja....."</MudText>
-                    </MudCardContent>
-                </MudCard>
+                               <MudPaper>
+                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center">
+                            <MudImage Src="images/badsing.jpg" Height="100" ObjectFit="ObjectFit.Contain" oncontextmenu="return false;" />
+                    <MudText>Talent that I do not have........  Singing </MudText>
+                        <MudText>Things whichI do all the time......... Singing</MudText>
+                        </MudStack>
+                    </MudPaper>
             </ItemContent>
+                <ItemDot>
+                    <MudIcon Size="Size.Medium" Icon="@Icons.Custom.Uncategorized.ChessKing" />
+                </ItemDot>
         </MudTimelineItem>
-         <MudTimelineItem Color="Color.Primary">
+         <MudTimelineItem>
             <ItemOpposite>
-                <MudCard>
-                    <MudCardContent>
-                        <MudText Typo="Typo.h4">Divi's dream of marrying a singer</MudText>
-                    </MudCardContent>
-                </MudCard>
+                <MudPaper>
+                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center">
+                            <MudImage Src="images/divipray.png" Height="100" ObjectFit="ObjectFit.Contain" oncontextmenu="return false;" />
+                        <MudText Color="Color.Info">Divi prayed VERY hard her future husband to be single.....</MudText>
+                        </MudStack>
+                    </MudPaper>
             </ItemOpposite>
             <ItemContent>
-                <MudCard>
-                    <MudCardContent>
-                        <MudText Typo="Typo.h4">Yogi singing "Raja... Rajathi Rajan intha Raja....."</MudText>
-                    </MudCardContent>
-                </MudCard>
+                <MudPaper>
+                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center">
+                            <MudImage Src="images/singleboy.png" Height="100" ObjectFit="ObjectFit.Contain" oncontextmenu="return false;" />
+                        <MudText Color="Color.Info">Yogi was always MORATTU single.....</MudText>
+                        </MudStack>
+                 </MudPaper>
             </ItemContent>
+                            <ItemDot>
+                    <MudIcon Size="Size.Medium" Icon="@Icons.Custom.Uncategorized.ChessKing" />
+                </ItemDot>
         </MudTimelineItem>
           <MudTimelineItem>
             <ItemOpposite>
-                <MudCard>
-                    <MudCardContent>
-                        <MudText Typo="Typo.h6">
-                            To be continued......
-                        </MudText>
-                    </MudCardContent>
-                </MudCard>
+                    <MudText Color="Color.Info" Align="Align.End">
+                        And then they Met
+                    </MudText>
             </ItemOpposite>
             <ItemContent>
-                <MudCard>
-                    <MudCardMedia Image="images/indiancouple.png"/>
-                </MudCard>
+                <MudPaper>
+                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center">
+                            <MudImage Src="images/firstmeet.jpg" Height="100" ObjectFit="ObjectFit.Contain" oncontextmenu="return false;" />
+                        </MudStack>
+                    </MudPaper>
             </ItemContent>
+                            <ItemDot>
+                    <MudIcon Size="Size.Medium" Icon="@Icons.Custom.Uncategorized.ChessKing" />
+                </ItemDot>
         </MudTimelineItem>
+            <MudTimelineItem>
+                <ItemOpposite>
+                    <MudText Color="Color.Info">
+                        Got together and engaged officially
+                    </MudText>
+
+                </ItemOpposite>
+                <ItemContent>
+                    <MudPaper Elevation="0">
+                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center">
+                            <MudImage Src="images/Carousel1.jpg" Height="100" ObjectFit="ObjectFit.Contain" oncontextmenu="return false;" />
+                        </MudStack>
+                    </MudPaper>
+                </ItemContent>
+                <ItemDot>
+                    <MudIcon Size="Size.Medium" Icon="@Icons.Custom.Uncategorized.ChessKing" />
+                </ItemDot>
+            </MudTimelineItem>
+            <MudTimelineItem>
+                <ItemOpposite>
+                    <MudText Color="Color.Info">
+                        10. 11. 22
+                    </MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudText Color="Color.Info">
+                        Reception 6: 30 pm
+                    </MudText>
+                </ItemContent>
+                <ItemDot>
+                    <MudAvatar Size="Size.Small" Image="images/Carousel3.jpg" oncontextmenu="return false;" />
+                </ItemDot>
+            </MudTimelineItem>
+            <MudTimelineItem>
+                <ItemOpposite>
+
+                    <MudText Color="Color.Info">
+                        Wedding 7: 30 - 9: 00  am
+                    </MudText>
+                </ItemOpposite>
+                <ItemContent>
+                    <MudText Color="Color.Info" Align="Align.End">
+                        11. 11. 22
+                    </MudText>
+                </ItemContent>
+                <ItemDot>
+                    <MudAvatar Size="Size.Small" Image="images/Carousel3.jpg" oncontextmenu="return false;" />
+                </ItemDot>
+            </MudTimelineItem>
+            <MudTimelineItem>
+                <ItemOpposite>
+                    <MudText Color="Color.Info">
+                        To be Continued.....
+                    </MudText>
+                </ItemOpposite>
+                <ItemContent>
+                   <MudPaper>
+                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center">
+                            <MudImage Src="images/indiancouple.png" Height="200" ObjectFit="ObjectFit.Contain" oncontextmenu="return false;" />
+                    </MudStack>
+                    </MudPaper>
+                </ItemContent>
+                <ItemDot>
+                    <MudIcon Size="Size.Medium" Icon="@Icons.Custom.Uncategorized.ChessKing" oncontextmenu="return false;" />
+                </ItemDot>
+            </MudTimelineItem>
     </MudTimeline>
+    </MudStack>
+    <MudDivider />
+    <MudStack Justify="Justify.SpaceAround" Row="true">
+        <MudChip Variant="Variant.Text" Color="Color.Error">
+            Days :@Days
+        </MudChip>
+        <MudChip Variant="Variant.Text" Color="Color.Error">
+            Hours :@Hours
+        </MudChip>
+        <MudChip Variant="Variant.Text" Color="Color.Error">
+            Minutes :@Min
+        </MudChip>
+        <MudChip Variant="Variant.Text" Color="Color.Error">
+            Seconds :@Sec
+        </MudChip>
+    </MudStack>
+    <MudDivider />
+    <MudStack Justify="Justify.SpaceEvenly">
+          <MudImage Src="images/november.png" Height="250" oncontextmenu="return false;"/>
+        <MudImage Src="images/savethedate.png" Height="250" oncontextmenu="return false;" />
+        <MudPaper Class="py-5 px-10">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.538259064455!2d80.1987228!3d13.0747967!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x52bb41a013683ba2!2sSree%20Varaaham%20Hall!5e0!3m2!1sen!2sin!4v1665216781960!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </MudPaper>
+        </MudStack>
 </MudContainer>
 
 @code{
